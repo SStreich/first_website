@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: fantasy;
+    line-height: 1.7;
+    background-image: url('../html/80110.jpg');
+    background-size: cover;
+}
+.centered {
+  position: absolute;
+	    top: 40%;
+ 	    left: 50%;
+ 	    transform: translate(-50%, -50%); }
+header {
+    background-color: rgba(102,102,102,.55);
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+}
+
+nav {
+    float: left;
+    flex: 20%;
+    background: rgba(204,204,204,.55);
+    padding: 0px 0px 0px 5px;
+    font-size: 18px;
+}
+
+.content {
+    flex: 80%;
+}
+
+nav a{
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+nav a:hover{
+  color: white;
+  background-color:rgba(241,241,241,.35);
+}
+
+.menu {
+        justify-content: space-around;
+}
+
+.artifacts {
+    font-family: 'Gloria Hallelujah', cursive;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    padding: 5%;
+    background-color: rgba(241,241,241,.65);
+}
+.image {
+
+display: inline-block;
+  height: auto;
+  width: 100%;
+}
+.artifact {
+float: left;
+   position:relative;
+   margin-left: 0px;
+   margin-right: 5%
+   width: 25%;
+   max-width: 180px;
+ }
+
+ .overlay {
+   position: absolute;
+   bottom: 1%;
+   background: rgb(0, 0, 0);
+   background: rgba(0, 0, 0, 0.5); /* Black see-through */
+   color: #f1f1f1;
+   width: 100%;
+   transition: .5s ease;
+   opacity:0;
+   color: white;
+   font-size: 16px;
+   padding: 20px;
+   text-align: center;
+ }
+
+ /* When you mouse over the container, fade in the overlay title */
+ .artifact:hover .overlay {
+   opacity: 1;
+ }
+
+
+.buy {
+    background-color: #555555;
+    border: none;
+    color: white;
+    flex-direction: center;
+    padding: 15px 32px;
+    height: 3%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buy:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); background-color:  #b3b3b3;}
+
+.buy:active {
+  background-color: #bfbfbf;
+  transform: translateY(4px);
+}
+
+section{
+    display: flex;
+  width: 100%;
+  height: 100%;
+
+
+}
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    position: fixed;
+    padding: 8px;
+    margin: inherit;
+    background-color: rgba(102,102,102,.55);
+    text-align: center;
+    color: white;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#active{
+  display: block;
+  background-color: rgba(241,241,241,.35);
+  border: 1px solid;
+}
