@@ -9,36 +9,68 @@
     <link href="materials/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
- <div class="content">
-     <header>
-         <h1>Powiewy srebrnych nitek</h1>
-         <p><img class="img" src="https://openclipart.org/download/288468/lying%20itch%20during%20ull%20oon.svg" alt="witch" width="300"><br>
+    <header>
+        <h1><br><br>Powiewy srebrnych nitek</h1>
+        <p><img class="witch" src="https://openclipart.org/download/288468/lying%20itch%20during%20ull%20oon.svg" alt="witch" width="300"><br>
 
-     </header>
-     <nav>
-         <a class="menu" href="index.html">Strona główna</a>
+    </header>
+    <nav>
+        <a class="menu" href="index.html">Strona główna</a>
         <a class="menu" href="o_mnie.html">Krótka opowieść o szybkiej śmierci</a>
-         <a class="menu" href="twarze.html">Labirynt twarzy</a>
-         <a class="menu" href="kontakt.html">Kontakt</a>
-     </nav>
-     <section>
-         <article style="max-width: 300px;">
-             <form name="contact" method="POST" action="http://localhost:8000/logged_in">
-                 Username:<br>
-                 <input type="text" name="username"><br> Password:
-                 <br>
-                 <input type="password" name="passwd"><br>
-                 <input type="submit" value="Login">
-             </form>
-         </article>
+        <a class="menu" href="twarze.html">Labirynt twarzy</a>
+        <a class="menu" href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="content">
+        <div class="row">
+            <div class="contact" id="form_container">
+                <h2>Zgubiłeś swą drogę? Krzyknij do mnie, krzyknij internetowo</h2>
+                <form method="post" name="contactForm" onsubmit="validate()">
 
-     </section>
-     <footer>
-         <p>Copyright by Selene Streich</p>
-         <p>Contact information: <a href="mailto:selene.streich@gmail.com">
-             selene.streich@gmail.com</a>.</p>
-     </footer>
- </div>
+                    <div class="row">
+                        <div class="c_massage">
+                            <label for="message">
+                                Treść:</label>
+                            <textarea class="form-control" id="message" name="message" maxlength="6000" rows="7" placeholder="No wymyśl coś..."></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="c_name">
+                            <label for="name">
+                                Kto Ty?:</label>
+                            <input type="text" class="form-control" id="name" name="name" required placeholder="O namae wa nan desu ka?">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="c_email">
+                            <label for="email">
+                                Email:  </label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Imailu mi daj">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="c_submit"><br><br>
+                            <input type="submit" class="button" value="Wyślij">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function validate() {
+            var email = document.getElementById("email")
+            var massage = document.getElementById("massage")
+            var name = document.forms["contactForm"]["name"].value;
+            if (name != "^(\b[A-Z]\w*)+$" || name.length > 20) {
+                alert("Wrong name!");
+                return false;
+            }
+        }
+    </script>
 
 </body>
 </html>
